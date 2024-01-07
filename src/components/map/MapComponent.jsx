@@ -1,28 +1,50 @@
 import React from 'react';
-import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
-import mapdata from '../../mapTwo.geojson';
+import {
+  ComposableMap,
+  Geographies,
+  Geography,
+  Marker,
+} from 'react-simple-maps';
+import mapdata from '../../mapTwo.json';
 const MapComponent = () => {
-  console.log('mapdata', mapdata);
+  const handleVoice = value => {
+    console.log('value', value);
+  };
   return (
     <ComposableMap
       projection="geoMercator"
-      style={{ backgroundColor: 'pink' }}
+      style={{
+        backgroundColor: 'pink',
+        height: '600px',
+      }}
       projectionConfig={{
-        scale: 1500,
-        center: [29, 51],
+        scale: 2300,
+        center: [31, 48],
       }}
       fill="white"
       stroke="black"
-      stroke-width={3}
+      strokeWidth={1}
     >
-      <Geographies
-        geography={mapdata}
-        style={{ width: '800px', height: '600px' }}
-      >
+      <Geographies geography={mapdata}>
         {geographies => {
-          return geographies.geographies.map(geo => {
-            return <Geography key={geo.rsmKey} geography={geo} />;
-          });
+          return (
+            <>
+              {geographies.geographies.map(geo => {
+                return (
+                  <Geography
+                    style={{
+                      hover: {
+                        fill: '#FF331F',
+                      },
+                    }}
+                    key={geo.rsmKey}
+                    geography={geo}
+                    onClick={() => handleVoice(geo)}
+                  />
+                );
+              })}
+            </>
+          );
         }}
       </Geographies>
     </ComposableMap>
