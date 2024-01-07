@@ -7,8 +7,8 @@ export const store = configureStore({
     // [bikeApi.reducerPath]: bikeApi.reducer,
     voiceState: voiceReducer,
   }),
-  middleware: getDefaultMiddleware => [
-    ...getDefaultMiddleware(),
-    // bikeApi.middleware,
-  ],
+  //   middleware: getDefaultMiddleware => [
+  //     ...getDefaultMiddleware(),
+  //     // bikeApi.middleware,
+  //   ],
 });

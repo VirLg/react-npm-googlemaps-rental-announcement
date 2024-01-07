@@ -1,9 +1,13 @@
 import React from 'react';
-import FornVioce from '../form/FornVioce';
+import FormVioce from '../form/FornVioce';
+import { useDispatch } from 'react-redux';
+import { add } from '../../redux/slice';
 
 const InfoDiv = () => {
+  const dispatch = useDispatch();
   const handleVoice = value => {
     console.log('value', value);
+    dispatch(add(value));
   };
   return (
     <div>
@@ -13,7 +17,7 @@ const InfoDiv = () => {
       <p>Text</p>
       <p>Price</p>
       <>
-        <FornVioce handleVoice={handleVoice} />
+        <FormVioce handleVoice={handleVoice} />
       </>
     </div>
   );

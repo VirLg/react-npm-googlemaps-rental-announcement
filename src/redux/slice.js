@@ -9,7 +9,10 @@ const voceSlice = createSlice({
   },
   reducers: {
     add(state, action) {
-      return [...state, action.payload];
+      console.log('state.voices', action.payload);
+      state.voices = [...state.voices, action.payload];
+      console.log('a', state.voices);
+      //   return state.voices;
     },
     // modalShow(state, action) {
     //   state.modal = action.payload;
