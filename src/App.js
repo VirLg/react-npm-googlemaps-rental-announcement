@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import MapCpmponent from './components/map/MapCpmponent';
+import MapComponent from './components/map/MapComponent';
 
 function App() {
   return (
     <div className="App">
-      <MapCpmponent />
+      <MapComponent />
     </div>
   );
 }
