@@ -8,7 +8,6 @@ function App() {
     <div className="App" style={{ display: 'flex' }}>
       <MapComponent />
       <div>
-        {' '}
         <InfoDiv />
       </div>
     </div>

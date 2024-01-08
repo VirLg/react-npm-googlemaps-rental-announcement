@@ -9,16 +9,20 @@ const voceSlice = createSlice({
   },
   reducers: {
     add(state, action) {
-      console.log('state.voices', action.payload);
-      state.voices = [...state.voices, action.payload];
-      console.log('a', state.voices);
-      //   return state.voices;
+      const unic = state.voices.findIndex(
+        el => action.payload.regionId === el.regionId
+      );
+      if (unic === -1) {
+        state.voices = [...state.voices, action.payload];
+      } else {
+        state.voices[unic].voice.push(action.payload.voice[0]);
+      }
     },
-    // modalShow(state, action) {
-    //   state.modal = action.payload;
-    // },
+
+    modalShow(state, action) {
+      state.modal = action.payload;
+    },
     bikeList(state, action) {
-      console.log('state', state);
       return state.bikes;
       // state.bike
       // const unic = state.bike.find(el => el._id === action.payload._id);

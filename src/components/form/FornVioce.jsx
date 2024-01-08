@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
-const FormVioce = ({ handleVoice }) => {
+const FormVioce = ({ handleFormVoice }) => {
   return (
     <Formik
       initialValues={{ voiceName: '', voicePrice: '', voiceImg: '' }}
@@ -16,10 +16,10 @@ const FormVioce = ({ handleVoice }) => {
         voiceImg: Yup.string().required('Required'),
       })}
       onSubmit={values => {
-        handleVoice(values);
+        handleFormVoice(values);
       }}
     >
-      <Form>
+      <Form style={{ display: 'flex', flexDirection: 'column' }}>
         <label htmlFor="voiceName">voiceName</label>
         <Field name="voiceName" type="text" />
         <ErrorMessage name="voiceName" />

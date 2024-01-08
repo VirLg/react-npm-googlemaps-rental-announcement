@@ -6,6 +6,7 @@
       "id": "5656",
       "properties": {
         "name": "Autonomous Republic of Crimea",
+        "regionalCenter": [34.10242, 44.95212],
         "density": 0,
         "path": "/world/Ukraine/Autonomous Republic of Crimea"
       },
@@ -457,6 +458,7 @@
       "id": "5653",
       "properties": {
         "name": "Cherkasy Oblast",
+        "regionalCenter": [32.05977, 49.44443],
         "density": 0,
         "path": "/world/Ukraine/Cherkasy Oblast"
       },
@@ -1478,6 +1480,7 @@
       "id": "5654",
       "properties": {
         "name": "Chernihiv Oblast",
+        "regionalCenter": [31.28935, 51.4982],
         "density": 0,
         "path": "/world/Ukraine/Chernihiv Oblast"
       },
@@ -2331,6 +2334,7 @@
       "id": "5655",
       "properties": {
         "name": "Chernivtsi Oblast",
+        "regionalCenter": [25.93584, 48.29208],
         "density": 0,
         "path": "/world/Ukraine/Chernivtsi Oblast"
       },
@@ -2698,6 +2702,7 @@
       "id": "5657",
       "properties": {
         "name": "Dnipropetrovsk Oblast",
+        "regionalCenter": [35.04618, 48.46472],
         "density": 0,
         "path": "/world/Ukraine/Dnipropetrovsk Oblast"
       },
@@ -3881,6 +3886,7 @@
       "id": "5658",
       "properties": {
         "name": "Donetsk Oblast",
+        "regionalCenter": [37.80285, 48.01588],
         "density": 0,
         "path": "/world/Ukraine/Donetsk Oblast"
       },
@@ -4769,6 +4775,7 @@
       "id": "5659",
       "properties": {
         "name": "Ivano-Frankivsk Oblast",
+        "regionalCenter": [24.69095, 48.88722],
         "density": 0,
         "path": "/world/Ukraine/Ivano-Frankivsk Oblast"
       },
@@ -5364,6 +5371,7 @@
       "id": "5660",
       "properties": {
         "name": "Kharkiv Oblast",
+        "regionalCenter": [36.52375, 49.97085],
         "density": 0,
         "path": "/world/Ukraine/Kharkiv Oblast"
       },
@@ -6191,6 +6199,7 @@
       "id": "5661",
       "properties": {
         "name": "Kherson Oblast",
+        "regionalCenter": [32.61687, 46.63542],
         "density": 0,
         "path": "/world/Ukraine/Kherson Oblast"
       },
@@ -7086,6 +7095,7 @@
       "id": "5662",
       "properties": {
         "name": "Khmelnytskyi Oblast",
+        "regionalCenter": [26.98713, 49.42298],
         "density": 0,
         "path": "/world/Ukraine/Khmelnytskyi Oblast"
       },
@@ -7993,6 +8003,7 @@
       "id": "5663",
       "properties": {
         "name": "Kiev Oblast",
+        "regionalCenter": [30.5234, 50.4501],
         "density": 0,
         "path": "/world/Ukraine/Kiev Oblast"
       },
@@ -9113,6 +9124,7 @@
       "id": "5664",
       "properties": {
         "name": "Kirovohrad Oblast",
+        "regionalCenter": [32.26232, 48.50793],
         "density": 0,
         "path": "/world/Ukraine/Kirovohrad Oblast"
       },
@@ -10259,6 +10271,7 @@
       "id": "5665",
       "properties": {
         "name": "Luhansk Oblast",
+        "regionalCenter": [39.30782, 48.57404],
         "density": 0,
         "path": "/world/Ukraine/Luhansk Oblast"
       },
@@ -10872,6 +10885,7 @@
       "id": "5666",
       "properties": {
         "name": "Lviv Oblast",
+        "regionalCenter": [24.02972, 49.83968],
         "density": 0,
         "path": "/world/Ukraine/Lviv Oblast"
       },
@@ -11461,6 +11475,7 @@
       "id": "5667",
       "properties": {
         "name": "Mykolaiv Oblast",
+        "regionalCenter": [23.97578, 49.52717],
         "density": 0,
         "path": "/world/Ukraine/Mykolaiv Oblast"
       },
@@ -12612,6 +12627,7 @@
       "id": "5668",
       "properties": {
         "name": "Odessa Oblast",
+        "regionalCenter": [30.72331, 46.48253],
         "density": 0,
         "path": "/world/Ukraine/Odessa Oblast"
       },
@@ -13608,6 +13624,7 @@
       "id": "5669",
       "properties": {
         "name": "Poltava Oblast",
+        "regionalCenter": [34.55142, 49.58827],
         "density": 0,
         "path": "/world/Ukraine/Poltava Oblast"
       },
@@ -14406,6 +14423,7 @@
       "id": "5670",
       "properties": {
         "name": "Rivne Oblast",
+        "regionalCenter": [26.25162, 50.6199],
         "density": 0,
         "path": "/world/Ukraine/Rivne Oblast"
       },
@@ -15226,6 +15244,7 @@
       "id": "5671",
       "properties": {
         "name": "Sumy Oblast",
+        "regionalCenter": [34.7981, 50.9077],
         "density": 0,
         "path": "/world/Ukraine/Sumy Oblast"
       },
@@ -16011,6 +16030,7 @@
       "id": "5672",
       "properties": {
         "name": "Ternopil Oblast",
+        "regionalCenter": [25.59477, 49.55352],
         "density": 0,
         "path": "/world/Ukraine/Ternopil Oblast"
       },
@@ -16757,6 +16777,7 @@
       "id": "5673",
       "properties": {
         "name": "Vinnytsia Oblast",
+        "regionalCenter": [28.46822, 49.23308],
         "density": 0,
         "path": "/world/Ukraine/Vinnytsia Oblast"
       },
@@ -17576,6 +17597,7 @@
       "id": "5674",
       "properties": {
         "name": "Volyn Oblast",
+        "regionalCenter": [25.32538, 50.74723],
         "density": 0,
         "path": "/world/Ukraine/Volyn Oblast"
       },
@@ -18200,6 +18222,7 @@
       "id": "5675",
       "properties": {
         "name": "Zakarpattia Oblast",
+        "regionalCenter": [22.28788, 48.6208],
         "density": 0,
         "path": "/world/Ukraine/Zakarpattia Oblast"
       },
@@ -18613,6 +18636,7 @@
       "id": "5676",
       "properties": {
         "name": "Zaporizhia Oblast",
+        "regionalCenter": [35.13957, 47.8388],
         "density": 0,
         "path": "/world/Ukraine/Zaporizhia Oblast"
       },
@@ -19479,6 +19503,7 @@
       "id": "5677",
       "properties": {
         "name": "Zhytomyr Oblast",
+        "regionalCenter": [28.65867, 50.25465],
         "density": 0,
         "path": "/world/Ukraine/Zhytomyr Oblast"
       },
