@@ -5,10 +5,14 @@ import {
   Geography,
   Marker,
 } from 'react-simple-maps';
-import mapdata from '../../mapTwo.json';
+import mapdataJson from '../../mapTwo.json';
 import { useDispatch, useSelector } from 'react-redux';
 import ModalWindow from '../modal/ModalWindow';
-import { addVoiceSelector, showModalSelector } from '../../redux/selectors';
+import {
+  addVoiceSelector,
+  mapSelector,
+  showModalSelector,
+} from '../../redux/selectors';
 import { add, modalShow, startValue } from '../../redux/slice';
 import FormVioce from '../form/FornVioce';
 const MapComponent = () => {
@@ -19,8 +23,9 @@ const MapComponent = () => {
   const [map, setMap] = useState(null);
 
   useEffect(() => {
-    dispatch(startValue(mapdata));
+    dispatch(startValue(mapdataJson));
   }, [dispatch]);
+  const mapdata = useSelector(mapSelector);
   const handleVoice = value => {
     dispatch(modalShow(true));
     const item = mapdata.features.find(el => el.id === value.id);
@@ -35,24 +40,23 @@ const MapComponent = () => {
     };
     dispatch(add(statRegionItem));
   };
-
-  useEffect(() => {
-    const handleReadVoice = () => {
-      console.log('map', map);
-      addVoice.map(el => {
-        console.log('el.regionId', el.regionId);
-        console.log('mapdata.features.id', mapdata.features);
-        if (el.regionId === mapdata.features.id) {
-          return setMap({
-            ...el,
-            length: 5,
-          });
-        }
-      });
-      console.log('mapinUse', map);
-    };
-    handleReadVoice();
-  }, [addVoice, map]);
+  // useEffect(() => {
+  //   const handleReadVoice = () => {
+  //     console.log('map', map);
+  //     addVoice.map(el => {
+  //       console.log('el.regionId', el.regionId);
+  //       console.log('mapdata.features.id', mapdata.features);
+  //       if (el.regionId === mapdata.features.id) {
+  //         return setMap({
+  //           ...el,
+  //           length: 5,
+  //         });
+  //       }
+  //     });
+  //     console.log('mapinUse', map);
+  //   };
+  //   handleReadVoice();
+  // }, [addVoice, map]);
 
   return (
     <>
@@ -70,7 +74,7 @@ const MapComponent = () => {
         stroke="black"
         strokeWidth={1}
       >
-        <Geographies geography={mapdata}>
+        <Geographies geography={mapdata || mapdataJson}>
           {geographies => {
             return (
               <>
@@ -92,24 +96,27 @@ const MapComponent = () => {
             );
           }}
         </Geographies>
-        {mapdata.features.map(el => {
-          return (
-            <Marker
-              coordinates={el.properties.regionalCenter}
-              key={el.properties.name}
-            >
-              <circle r={2} fill="#F53" />
-
-              <text
-                textAnchor="middle"
-                fill="#F53"
-                style={{ fontSize: '10px', fontWeight: '100' }}
+        {mapdata &&
+          mapdataJson.features.map(el => {
+            return (
+              <Marker
+                coordinates={el.properties.regionalCenter}
+                key={el.properties.name}
               >
-                {el.properties.name}
-              </text>
-            </Marker>
-          );
-        })}
+                <circle r={2} fill="#F53" />
+
+                <text
+                  textAnchor="middle"
+                  fill="#F53"
+                  style={{ fontSize: '10px', fontWeight: '100' }}
+                >
+                  {/* {el.properties.name} */}
+                  {el.voice && el.voice.length}
+                  <br />
+                </text>
+              </Marker>
+            );
+          })}
       </ComposableMap>
       {showModal && (
         <ModalWindow>
