@@ -6,35 +6,26 @@ const voceSlice = createSlice({
   initialState: {
     modal: false,
     voices: [],
+    map: [],
   },
   reducers: {
+    startValue(state, action) {
+      state.map = action.payload;
+    },
     add(state, action) {
-      const unic = state.voices.findIndex(
-        el => action.payload.regionId === el.regionId
+      const unic = state.map.features.findIndex(
+        el => action.payload.regionId === el.id
       );
-      if (unic === -1) {
-        state.voices = [...state.voices, action.payload];
-      } else {
-        state.voices[unic].voice.push(action.payload.voice[0]);
-      }
+      state.map.features[unic]?.voice
+        ? state.map.features[unic]?.voice.push(action.payload.voice[0])
+        : (state.map.features[unic]['voice'] = [action.payload.voice[0]]);
     },
 
     modalShow(state, action) {
       state.modal = action.payload;
     },
-    bikeList(state, action) {
-      return state.bikes;
-      // state.bike
-      // const unic = state.bike.find(el => el._id === action.payload._id);
-      // if (unic) {
-      //   state.favorite = state.bike.filter(el => el._id !== unic._id);
-      //   Notify.success('Delete with favorite');
-      // } else {
-      //   state.bike = [...state.bike, action.payload];
-      //   Notify.success('Add to favorite');
-    },
   },
 });
-export const { modalShow, add } = voceSlice.actions;
+export const { modalShow, add, startValue } = voceSlice.actions;
 
 export const voiceReducer = voceSlice.reducer;

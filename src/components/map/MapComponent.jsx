@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ComposableMap,
   Geographies,
@@ -9,13 +9,18 @@ import mapdata from '../../mapTwo.json';
 import { useDispatch, useSelector } from 'react-redux';
 import ModalWindow from '../modal/ModalWindow';
 import { addVoiceSelector, showModalSelector } from '../../redux/selectors';
-import { add, modalShow } from '../../redux/slice';
+import { add, modalShow, startValue } from '../../redux/slice';
 import FormVioce from '../form/FornVioce';
 const MapComponent = () => {
   const dispatch = useDispatch();
   const showModal = useSelector(showModalSelector);
   const addVoice = useSelector(addVoiceSelector);
   const [region, setRegion] = useState(null);
+  const [map, setMap] = useState(null);
+
+  useEffect(() => {
+    dispatch(startValue(mapdata));
+  }, [dispatch]);
   const handleVoice = value => {
     dispatch(modalShow(true));
     const item = mapdata.features.find(el => el.id === value.id);
@@ -30,6 +35,25 @@ const MapComponent = () => {
     };
     dispatch(add(statRegionItem));
   };
+
+  useEffect(() => {
+    const handleReadVoice = () => {
+      console.log('map', map);
+      addVoice.map(el => {
+        console.log('el.regionId', el.regionId);
+        console.log('mapdata.features.id', mapdata.features);
+        if (el.regionId === mapdata.features.id) {
+          return setMap({
+            ...el,
+            length: 5,
+          });
+        }
+      });
+      console.log('mapinUse', map);
+    };
+    handleReadVoice();
+  }, [addVoice, map]);
+
   return (
     <>
       <ComposableMap
@@ -79,14 +103,7 @@ const MapComponent = () => {
               <text
                 textAnchor="middle"
                 fill="#F53"
-                style={{ fontSize: '7px', fontWeight: '100' }}
-              >
-                {el.properties.name}
-              </text>
-              <text
-                textAnchor="middle"
-                fill="#F53"
-                style={{ fontSize: '12px', fontWeight: '100' }}
+                style={{ fontSize: '10px', fontWeight: '100' }}
               >
                 {el.properties.name}
               </text>
