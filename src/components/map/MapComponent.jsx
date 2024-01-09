@@ -20,7 +20,6 @@ const MapComponent = () => {
   const showModal = useSelector(showModalSelector);
   const addVoice = useSelector(addVoiceSelector);
   const [region, setRegion] = useState(null);
-  const [map, setMap] = useState(null);
 
   useEffect(() => {
     dispatch(startValue(mapdataJson));
@@ -31,6 +30,7 @@ const MapComponent = () => {
     const item = mapdata.features.find(el => el.id === value.id);
     setRegion(item.id);
   };
+
   const handleFormVoice = data => {
     console.log('addVoice', addVoice);
 
@@ -40,24 +40,9 @@ const MapComponent = () => {
     };
     dispatch(add(statRegionItem));
   };
-  // useEffect(() => {
-  //   const handleReadVoice = () => {
-  //     console.log('map', map);
-  //     addVoice.map(el => {
-  //       console.log('el.regionId', el.regionId);
-  //       console.log('mapdata.features.id', mapdata.features);
-  //       if (el.regionId === mapdata.features.id) {
-  //         return setMap({
-  //           ...el,
-  //           length: 5,
-  //         });
-  //       }
-  //     });
-  //     console.log('mapinUse', map);
-  //   };
-  //   handleReadVoice();
-  // }, [addVoice, map]);
-
+  const handleOneVoice = () => {
+    console.log('first', 'first');
+  };
   return (
     <>
       <ComposableMap
@@ -100,6 +85,7 @@ const MapComponent = () => {
           mapdataJson.features.map(el => {
             return (
               <Marker
+                onClick={handleOneVoice}
                 coordinates={el.properties.regionalCenter}
                 key={el.properties.name}
               >
@@ -112,7 +98,6 @@ const MapComponent = () => {
                 >
                   {/* {el.properties.name} */}
                   {el.voice && el.voice.length}
-                  <br />
                 </text>
               </Marker>
             );

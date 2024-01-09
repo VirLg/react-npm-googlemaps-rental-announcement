@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { addVoiceSelector } from '../../redux/selectors';
-import mapdata from '../../mapTwo.json';
+import { addVoiceSelector, mapSelector } from '../../redux/selectors';
+
 const InfoDiv = () => {
-  const voiceOnRegion = useSelector(addVoiceSelector);
+  const selectorAllVoice = useSelector(mapSelector);
+  const infoOnVoice = useSelector(mapSelector);
+
+  console.log('infoOnVoice', infoOnVoice);
   return (
-    <div>
-      <div style={{ width: '100px', height: '100px', border: '1px solid red' }}>
-        IMG
-      </div>
-      <p>Text</p>
-      <p>Price</p>
-    </div>
+    infoOnVoice.features &&
+    infoOnVoice.features.map(el => {
+      if (el.voice) {
+        return (
+          <>
+            <p>{el.properties.name}</p>
+            <p>{el.voice.length}</p>
+          </>
+        );
+      } else {
+        return null;
+      }
+    })
   );
 };
 
